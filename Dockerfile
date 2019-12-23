@@ -44,3 +44,6 @@ RUN sed -i 's/Listen localhost:631/Listen 0.0.0.0:631/' /etc/cups/cupsd.conf && 
 	sed -i 's/.*enable\-dbus=.*/enable\-dbus\=no/' /etc/avahi/avahi-daemon.conf && \
 	echo "ServerAlias *" >> /etc/cups/cupsd.conf && \
 	echo "DefaultEncryption Never" >> /etc/cups/cupsd.conf
+
+RUN dpkg -i --force-architecture /drv/dcp150ccupswrapper-1.0.1-1.i386.deb \
+ && dpkg -i --force-architecture /drv/dcp150clpr-1.0.1-1.i386.deb
